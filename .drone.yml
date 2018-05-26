@@ -2,7 +2,7 @@ pipeline:
   build:
     image: node:8
     volumes:
-      - /etc/openvpn:/var/vpn/
+      - /usr/local/share/drone:/var/hostdata/
     commands:
       - cat /etc/issue
       - ls -l /var/hostdata/yanzhipeng.ovpn
