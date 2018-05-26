@@ -16,5 +16,6 @@ pipeline:
       - apt-get install -y openvpn
       - which openvpn
       - ls /var/hostdata
-      - openvpn /var/hostdata/yanzhipeng.ovpn &&
+      - cp /var/hostdata/yanzhipeng.ovpn ~/openvpn.ovpn
+      - openvpn ~/openvpn.ovpn &&
       - npm install
