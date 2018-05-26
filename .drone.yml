@@ -2,7 +2,7 @@ pipeline:
   build:
     image: node:8
     volumes:
-      - /home/yanzhipeng/yanzhipeng.ovpn:~/yanzhipeng.ovpn
+      - /var/vpn/yanzhipeng.ovpn:~/yanzhipeng.ovpn
     commands:
       - lsb_release -a
       - apt install openvpn
