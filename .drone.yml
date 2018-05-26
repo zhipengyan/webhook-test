@@ -1,9 +1,7 @@
 pipeline:
   build:
     image: node:8
-    depends_on:
-      - vpn
-    network_mode: "service:vpn"
+    network_mode: host
     commands:
       - npm install
 
@@ -21,5 +19,4 @@ services:
     volumes:
       - /usr/local/share/drone:/var/hostdata/:z
       - /dev/net:/dev/net:z
-    commands:
-      - openvpn --daemon --config /var/hostdata/yanzhipeng.ovpn
+    command: openvpn --daemon --config /var/hostdata/yanzhipeng.ovpn
