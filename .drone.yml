@@ -11,6 +11,6 @@ pipeline:
       - cp /var/hostdata/sources.list /etc/apt
       - apt-get update
       - apt-get install -y openvpn
-      - man openvpn
+      - which openvpn
       - npm install
       - npm run build
