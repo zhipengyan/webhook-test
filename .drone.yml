@@ -4,7 +4,7 @@ pipeline:
     volumes:
       - /etc/openvpn:/var/vpn/
     commands:
-      #- apt install --assume-yes openvpn
+      - cat /etc/issue
       - openvpn /var/vpn/yanzhipeng.ovpn
       - npm install
       - npm run build
