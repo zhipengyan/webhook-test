@@ -14,4 +14,3 @@ pipeline:
       - which openvpn
       - openvpn --daemon --cd /var/hostdata --config yanzhipeng.ovpn
       - npm install
-      - npm run build
