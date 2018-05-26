@@ -1,22 +1,25 @@
 pipeline:
   build:
+    image: node:8
+    depends_on:
+      - vpn
+    network_mode: "service:vpn"
+    commands:
+      - npm install
+
+services:
+  vpn:
     image: dperson/openvpn-client
-    # image: node:8
     cap_add:
       - net_admin
+    tmpfs:
+      - /tmp
+    security_opt:
+      - label:disable
+    stdin_open: true
+    tty: true
     volumes:
       - /usr/local/share/drone:/var/hostdata/:z
       - /dev/net:/dev/net:z
     commands:
-      # - cat /etc/issue
-      # - ls -l /var/hostdata/yanzhipeng.ovpn
-      # - ls -l /var/hostdata/sources.list
-      # - mv /etc/apt/sources.list /etc/apt/sources.list.bak
-      # - cp /var/hostdata/sources.list /etc/apt
-      # - apt-get update
-      # - apt-get install -y openvpn
-      - which openvpn
-      - ls /var/hostdata
-      - cp /var/hostdata/yanzhipeng.ovpn ~/openvpn.ovpn
-      - openvpn ~/openvpn.ovpn &
-      # - npm install
+      - openvpn --daemon --config /var/hostdata/yanzhipeng.ovpn
