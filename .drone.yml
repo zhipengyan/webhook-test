@@ -4,19 +4,3 @@ pipeline:
     network_mode: host
     commands:
       - npm install
-
-services:
-  vpn:
-    image: dperson/openvpn-client
-    cap_add:
-      - net_admin
-    tmpfs:
-      - /tmp
-    security_opt:
-      - label:disable
-    stdin_open: true
-    tty: true
-    volumes:
-      - /usr/local/share/drone:/var/hostdata/:z
-      - /dev/net:/dev/net:z
-    command: openvpn --daemon --config /var/hostdata/yanzhipeng.ovpn
