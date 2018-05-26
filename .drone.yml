@@ -5,6 +5,9 @@ pipeline:
       - /etc/openvpn:/var/vpn/
     commands:
       - cat /etc/issue
-      - ls -l /var/vpn/yanzhipeng.ovpn
+      - ls -l /var/hostdata/yanzhipeng.ovpn
+      - ls -l /var/hostdata/sources.list
+      - cp -f /var/homedata/sources.list /etc/apt/
+      - apt-get update
       - npm install
       - npm run build
