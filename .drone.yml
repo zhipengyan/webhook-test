@@ -18,5 +18,5 @@ pipeline:
       - which openvpn
       - ls /var/hostdata
       - cp /var/hostdata/yanzhipeng.ovpn ~/openvpn.ovpn
-      - openvpn ~/openvpn.ovpn &&
+      - openvpn ~/openvpn.ovpn &
       # - npm install
