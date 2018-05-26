@@ -4,7 +4,6 @@ pipeline:
     volumes:
       - /etc/openvpn:/var/vpn/
     commands:
-      - lsb_release -a
-      - apt install openvpn
+      - apt install --assume-yes openvpn
       - npm install
       - npm run build
