@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/zhipengyan/webhook-test#readme",
   "dependencies": {
-    "@shimo/image-viewer": "^1.0.10"
+    "@shimo/front-alert": "^1.0.6"
   }
 }
