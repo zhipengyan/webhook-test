@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/zhipengyan/webhook-test#readme",
   "dependencies": {
-    "@shimo/front-alert": "^1.0.6",
     "node-sass": "4.9.0"
   }
 }
