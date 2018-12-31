@@ -4,3 +4,7 @@ pipeline:
     network_mode: host
     commands:
       - npm install
+    when:
+      branch:
+        - master
+        - develop
